@@ -59,21 +59,13 @@ export default {
   background-color: variables.$color-primary;
 
   nav {
-      height: 100%;
-      padding: 1rem;
-      @include mixins.display-flex();
-
       img {
         object-fit: cover;
         height: 60%;
       }
 
       ul {
-        height: 100%;
         width: 100%;
-        @include mixins.display-flex($justify-content:space-around);
-        list-style: none;
-        font-size: 0.8rem;
 
         li {
           width: calc(20% - 1rem);
@@ -87,8 +79,6 @@ export default {
           color: white;
           height: 100%;
           @include mixins.display-flex();
-          text-transform: uppercase;
-          padding: 0.5rem 0;
 
           span {
             margin-left: 0.5rem;

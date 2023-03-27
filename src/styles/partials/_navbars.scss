@@ -1,0 +1,29 @@
+@use './mixins';
+
+nav {
+  height: 100%;
+  padding: 1rem;
+  @include mixins.display-flex($justify-content:space-between);
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  ul {
+    height: 100%;
+    @include mixins.display-flex();
+    list-style: none;
+    font-size: 0.8rem;
+
+    li {
+      margin: 0 0.5rem;
+
+      a {
+        text-transform: uppercase;
+        padding: 0.5rem;
+      }
+      
+    }
+  }
+}
