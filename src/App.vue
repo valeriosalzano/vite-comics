@@ -1,9 +1,11 @@
 <script>
   import AppHeader from './components/AppHeader.vue';
+  import AppFooter from './components/AppFooter.vue';
 
   export default {
     components: {
       AppHeader,
+      AppFooter,
     }
   }
 </script>
@@ -15,8 +17,9 @@
     <div class="container">
       &rightarrow; Content goes here &leftarrow;
     </div>
-    
   </main>
+
+  <AppFooter></AppFooter>
 </template>
 
 <style lang="scss">

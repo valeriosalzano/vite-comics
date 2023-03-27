@@ -87,8 +87,6 @@ export default {
           }
 
           a {
-            color: black;
-            text-decoration: none;
             text-transform: uppercase;
             padding: 0.5rem;
           }
