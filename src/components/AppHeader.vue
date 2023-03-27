@@ -52,6 +52,7 @@ export default {
     height: 120px;
 
     nav {
+      padding: 1rem 0.5rem;
       li {
         position: relative;
 
