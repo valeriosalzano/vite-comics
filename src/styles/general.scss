@@ -1,0 +1,18 @@
+@use '/src/styles/partials/containers';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+main {
+  background-color: black;
+  color: white;
+  padding: 2rem 0;
+  font-size: 2rem;
+}
