@@ -60,19 +60,19 @@ export default {
 
   nav {
       img {
-        object-fit: cover;
-        height: 60%;
+        height: 40%;
+        margin-right: 0.5rem;
       }
 
       ul {
-        width: 100%;
+        flex-grow: 1;
 
         li {
           width: calc(20% - 1rem);
           height: 100%;
 
           &:last-of-type img {
-            height: 40%;
+            height: 30%;
           }
         }
         a {
@@ -80,8 +80,8 @@ export default {
           height: 100%;
           @include mixins.display-flex();
 
-          span {
-            margin-left: 0.5rem;
+          &:hover {
+            backdrop-filter: brightness(70%);
           }
         }
       }

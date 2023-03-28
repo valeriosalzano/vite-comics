@@ -37,9 +37,9 @@ export default {
       <nav>
         <a class="call-to-action" href="#">sign-up now!</a>
         <div class="social-container">
-          <span>follow us</span>
+          <p>follow us</p>
           <ul>
-            <li v-for="icon in navIcons"><a href="#"><img :src="getImagePath(icon.image)" :alt="icon.social"></a></li>
+            <li v-for="icon in navIcons"><a href="#"><img :src="getImagePath(icon.image)" :alt="`${icon.social} logo`"></a></li>
           </ul>
         </div>
       </nav>
@@ -50,30 +50,30 @@ export default {
 
 <style scoped lang="scss">
 @use '../styles/partials/mixins';
-@use '../styles/partials/variables';
+@use '../styles/partials/variables' as *;
 
 #footer-banner {
-  background-color: #303030;
+  background-color: $color-bg-footer-banner;
 }
   nav {
     .call-to-action {
       text-transform: uppercase;
-      color: white;
+      color: $color-text-btn;
       padding: 1rem 1.5rem;
-      border: 3px solid variables.$color-primary;
+      border: 3px solid $color-primary;
+      &:hover {
+        background-color: $color-primary;
+      }
     }
     .social-container {
       @include mixins.display-flex();
 
-      span {
+      p {
+        font-family: 'Open Sans Condensed', sans-serif;
         text-transform: uppercase;
-        color: variables.$color-primary;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      li {
-        filter: hue-rotate(90deg);
+        color: $color-primary;
+        font-size: 1.5rem;
+        margin-right: 1rem;
       }
     }
   }

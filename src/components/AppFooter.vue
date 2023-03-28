@@ -110,66 +110,65 @@ export default {
 </script>
 
 <template>
-  <BlueBanner></BlueBanner>
-  <div id="footer">
-    <div class="container">
-      <nav>
-        <ul v-for="menu in navMenus">
-          <li v-for="(link,index) in menu">
-            <h3 v-if="index==0">{{link.title}}</h3>
-            <a v-else :href="link.href">{{ link.text }}</a>
-          </li>
-        </ul>
-      </nav>
-      <img id="footer-bg-logo" src="../assets/img/dc-logo-bg.png">
+  <div>
+    <BlueBanner></BlueBanner>
+    <div id="footer">
+      <div class="container">
+        <nav>
+          <ul v-for="menu in navMenus">
+            <li v-for="(link,index) in menu">
+              <h3 v-if="index==0">{{link.title}}</h3>
+              <a v-else :href="link.href">{{ link.text }}</a>
+            </li>
+          </ul>
+        </nav>
+        <img id="footer-bg-logo" src="../assets/img/dc-logo-bg.png">
+      </div>
+      <FooterBanner></FooterBanner>
     </div>
-    <FooterBanner></FooterBanner>
   </div>
-  
 </template>
 
 <style scoped lang="scss">
 @use '../styles/partials/mixins';
+@use '../styles/partials/variables' as *;
 
   #footer {
-    background-image: url("../assets/img/footer-bg.jpg");
-    background-size: cover;
-
+    @include mixins.background("../assets/img/footer-bg.jpg",center,cover);
     .container {
-      @include mixins.display-flex($justify-content:space-between);
+      @include mixins.display-flex($justify:space-between,$wrap:nowrap);
       overflow: hidden;
       height: 360px;
     }
   }
 
   nav {
-    @include mixins.display-flex(column,flex-start,flex-start);
-    align-items: start;
-    flex-wrap: wrap;
-    height: 350px;
-    padding: 1.5rem 0;
+    @include mixins.display-flex(column,flex-start,flex-start,wrap);
 
     * {
-        text-align: start;
-        color: white;
-        width: 100%;
+      align-self: flex-start;
+    }
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: $color-text-footer-h3;
       }
     ul {
       height: unset;
       flex-direction: column;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      margin-right: 1rem;
 
-      h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
       a {
         display: inline-block;
-        text-transform: unset;
+        text-transform: capitalize;
         font-size: 0.8rem;
-        color: #797979;
-        padding: 0;
-        margin: 0.2rem 0;
+        color: $color-text-footer-menu;
+        margin: 0.1rem 0;
+        
+        &:hover {
+          filter: brightness(150%);
+        }
       }
     }
   }
