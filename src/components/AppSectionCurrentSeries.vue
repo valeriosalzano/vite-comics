@@ -56,15 +56,14 @@ ul {
   }
 
   li {
-    width: calc(100% / 6 - 1rem);
+    width: calc(100% - 1rem);
     margin: 1rem 0.5rem;
+    img {
+      width: 100%;
+    }
 
     .img-container {
       overflow: hidden;
-    }
-
-    img {
-      height: 300px;
     }
 
     h3 {
@@ -86,5 +85,20 @@ button {
   color: white;
   font-weight: bold;
 }
-  
+
+@media screen and (min-width: 768px) {
+  ul li {
+    width: calc(100% / 4 - 1rem);
+
+    img {
+      height: 300px;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  ul li {
+    width: calc(100% / 6 - 1rem);
+
+  }
+}
 </style>

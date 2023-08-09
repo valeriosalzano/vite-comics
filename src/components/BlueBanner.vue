@@ -55,7 +55,6 @@ export default {
 @use '../styles/partials/mixins';
 
 #blue-banner {
-  height: 150px;
   background-color: variables.$color-primary;
 
   nav {
@@ -65,17 +64,19 @@ export default {
       }
 
       ul {
+        flex-direction: column;
         flex-grow: 1;
 
         li {
-          width: calc(20% - 1rem);
-          height: 100%;
+          height: 200px;
+          width: 100%;
 
           &:last-of-type img {
             height: 30%;
           }
         }
         a {
+          width: 100%;
           color: white;
           height: 100%;
           @include mixins.display-flex();
@@ -86,5 +87,46 @@ export default {
         }
       }
   }
+}
+
+@media screen and (min-width: 768px){
+  #blue-banner{
+    height: 150px;
+    nav {
+
+      ul {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      
+        li {
+          width: unset;
+          height: 100%;
+        }
+
+      }
+    }
+
+  }
+  
+}
+
+@media screen and (min-width: 1200px){
+  #blue-banner{
+    height: 150px;
+
+    nav {
+
+      ul {
+      flex-direction: row;
+      
+        li {
+          max-width: calc(20% - 0.5rem);
+        }
+
+      }
+    }
+
+  }
+  
 }
 </style>

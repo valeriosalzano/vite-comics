@@ -48,14 +48,31 @@ export default {
 <style scoped lang="scss">
   @use '../styles/partials/variables' as *;
 
+  nav.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 2rem;
+    overflow-x: auto;
+  }
+
   header {
     height: 120px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.2rem;
 
+    ul {
+      overflow-x: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+      padding: 0 0.2rem;
+    }
+
     li {
       position: relative;
       min-width: 3.5rem;
+      flex-shrink: 0;
 
       a{color: $color-text-header;}
       
@@ -67,7 +84,7 @@ export default {
           content: '';
           height: 5px;
           position: absolute;
-          bottom: -49px;
+          bottom: -46px;
           left: 0;
           right: 0;
           background-color: $color-primary;
